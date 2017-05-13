@@ -43,8 +43,13 @@ Then the activities, decisons levels, decision variables, and constants lines ar
 
 ### Using the program:
 The program includes a main directive and funtion so it can be imported for its functions, but usually will be called from the command line. The program includes a help option (-h, --help) which will display available options.
+
 -l, --layout will override the default layout type (will import or compute if not found)
+
 -q, --qdimac tells the program to parse a qdimacs file into a graph
+
 -p, --pickle tells the program to import a python .pickle formatted graph (saves time from parsing and assigning attributes from a .qdimacs file)
+
 -g, --gml similar to the pickle import type, but reads a .gml file (larger than pickle, but usable with other graphing tools)
+
 -o, --output is the output type. This can be a pickle, gml, pdf, svg, or log, important to note is that the log output will create a multipage pdf of the problem being solved (very large file depending on the size of the problem)
