@@ -24,7 +24,7 @@ LAYOUT_TYPE_NAMES = {
 "sugi" : "Sugiyama Layout",
 "fr_layer" : "Fruchterman Reingold Layered Layout"
 }
-OUTPUT_TYPES = ["pdf", "svg", "gml", "log"]
+OUTPUT_TYPES = ["pdf", "svg", "gml", "pickle", "log"]
 
 
 def make_Graph_QDIMACS(fname, flatten=True, edge_weight=True, size_range=None, shared_edge_weight=0.1):
@@ -296,8 +296,8 @@ def main(argv):
     if output_type in ("pdf", "svg"):
         #scrub_Vertex_Labels(Graph)	#Temporary
         ig.plot(Graph, graph_name + layout_type + "." + output_type, bbox = visual_style["bbox"])#, **visual_style)	#Visual style is really handled directly by the graph, saves time recomputing when saved
-    elif output_type == "gml":
-        Graph.write_gml(graph_name + layout_type + "." + output_type)
+    elif output_type in ("gml", "pickle"):
+        Graph.write(graph_name + layout_type + "." + output_type)
     elif output_type == "log":
         parse_Log(Graph)
         
