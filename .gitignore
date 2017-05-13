@@ -1,7 +1,9 @@
 *.qdimacs
 *.pdf
 *.svg
-*.log
+*.qdimacs.log
 *.gml
 *.pickle
 *.gephi
+*.layout
+*.exe
